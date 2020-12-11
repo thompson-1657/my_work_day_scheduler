@@ -10,10 +10,6 @@ $(document).ready(function () {
         var time = $(this).parent().attr("id");
         var value = $(this).siblings(".description").val()
         localStorage.setItem(time, value);
-
-        var storedData = localStorage.getItem(time);
-        console.log(storedData);
-
     });
 
     function hourUpdater() {
