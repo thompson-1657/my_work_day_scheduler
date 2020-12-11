@@ -2,14 +2,18 @@ $(document).ready(function () {
 
     var m = moment().format("dddd, MMMM DD");
     var p = $('<p></p>')
-    $('span').append(p).text(m)
+    $('span').append(p).text(m);
 
-    console.log(m);
 
     $(".saveBtn").on("click", function () {
 
         var time = $(this).parent().attr("id");
-        var value = $(this).siblings(".description").text();
+        var value = $(this).siblings(".description").val()
+        localStorage.setItem(time, value);
+
+        var storedData = localStorage.getItem(time);
+        console.log(storedData);
+
     });
 
     function hourUpdater() {
@@ -32,19 +36,6 @@ $(document).ready(function () {
         });
     }
     hourUpdater();
-
-    // // get description value to console log
-    // // set values to local storage
-
-
-
-
-
-
-
-
-
-
 
 })
 
