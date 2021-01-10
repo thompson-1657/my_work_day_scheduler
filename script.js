@@ -56,7 +56,7 @@ $(document).ready(function () {
 
         $(".time-block").each(function () {
             var blockHour = parseInt($(this).attr("id"));
-
+            console.log(this)
             if (currentHour > blockHour) {
                 $(this).addClass("past");
             } else if (currentHour === blockHour) {
